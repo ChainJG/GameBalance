@@ -51,6 +51,7 @@ namespace GameBalance.MVVM.ViewModels.Windows
             PageIcon = item.Icon;
         }
 
+
         [RelayCommand]
         private void Navigate(PageId page)
         {
