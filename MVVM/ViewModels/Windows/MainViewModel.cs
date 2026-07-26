@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using GameBalance.Framework.Navigation.Core;
 using GameBalance.Framework.Navigation.Dock;
 using GameBalance.Framework.Navigation.Provider;
+using MaterialDesignThemes.Wpf;
 using System.Collections.ObjectModel;
 
 namespace GameBalance.MVVM.ViewModels.Windows
@@ -11,6 +12,14 @@ namespace GameBalance.MVVM.ViewModels.Windows
     {
         [ObservableProperty]
         private object? currentView;
+
+        #region Page Properties
+        [ObservableProperty]
+        private string pageTitle;
+        [ObservableProperty]
+        private PackIconKind pageIcon; 
+        #endregion
+
         public ObservableCollection<ActionItem> DockItems { get; }
 
         private readonly NavigationService _navigationService;
@@ -35,6 +44,11 @@ namespace GameBalance.MVVM.ViewModels.Windows
         }
         private void OnDockSelectionChanged(ActionItem? item)
         {
+            if (item is null)
+                return;
+
+            PageTitle = item.Name;
+            PageIcon = item.Icon;
         }
 
         [RelayCommand]
