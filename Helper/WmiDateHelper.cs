@@ -1,0 +1,28 @@
+﻿using System.Management;
+
+namespace GameBalance.Helper
+{
+    public static class WmiDateHelper
+    {
+        public static string FormatDate(
+            string? wmiDate,
+            string format = "yyyy-MM-dd")
+        {
+            if (string.IsNullOrWhiteSpace(wmiDate))
+                return "Unknown";
+
+            try
+            {
+                var date =
+                    ManagementDateTimeConverter
+                    .ToDateTime(wmiDate);
+
+                return date.ToString(format);
+            }
+            catch
+            {
+                return "Unknown";
+            }
+        }
+    }
+}

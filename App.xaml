@@ -1,0 +1,46 @@
+﻿<Application
+    x:Class="GameBalance.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:GameBalance">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <!--#region Theme-->
+                <ResourceDictionary Source="Styles/Themes/Resources/Brushes.xaml" />
+                <ResourceDictionary Source="Styles/Themes/Resources/Typography.xaml" />
+                <ResourceDictionary Source="Styles/Themes/Resources/Spacing.xaml" />
+                <!--#endregion-->
+
+                <!--#region MaterialDesignThemes Style-->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign2.Defaults.xaml" />
+                <!--#endregion-->
+
+                <!--#region Required Style Level 1-->
+                <ResourceDictionary Source="Styles/InteractiveCard/InteractiveCardStyle.xaml" />
+                <ResourceDictionary Source="Styles/InteractiveCard/InteractiveControl.xaml" />
+                <ResourceDictionary Source="Styles/InteractiveCard/InteractiveIconButtonStyle.xaml" />
+                <ResourceDictionary Source="Styles/Border/BorderStyles.xaml" />
+                <!--#endregion-->
+
+                <!--#region Required Style Level 2-->
+                <ResourceDictionary Source="Styles/Core/ConverterDictionary.xaml" />
+                <ResourceDictionary Source="Styles/TextBlock/TextBlockStyles.xaml" />
+                <ResourceDictionary Source="Styles/Icon/PackIconKindStyles.xaml" />
+                <ResourceDictionary Source="Styles/Border/ApplicationBorderStyle.xaml" />
+                <ResourceDictionary Source="Styles/Separator/VerticalSeparatorStyle.xaml" />
+                <!--#endregion-->
+
+                <!--#region Button Style-->
+                <ResourceDictionary Source="Styles/Dock/DockItemControlStyle.xaml" />
+                <ResourceDictionary Source="Styles/Dock/DockItemStyle.xaml" />
+                <ResourceDictionary Source="Styles/Buttons/Titlebar/CaptionButtonStyle.xaml" />
+                <!--#endregion-->
+
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

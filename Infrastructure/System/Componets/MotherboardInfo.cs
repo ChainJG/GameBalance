@@ -1,0 +1,32 @@
+﻿using GameBalance.Helper;
+
+namespace GameBalance.Infrastructure.System.Componets
+{
+    public class MotherboardInfo
+    {
+        public string Manufacturer { get; set; }
+        public string Product { get; set; }        // Z790, B550 etc
+        public string SerialNumber { get; set; }   
+        public MotherboardBrand Brand { get; set; }
+        public string Version { get; set; }
+        public string AssetTag { get; set; }
+        public string SKU { get; set; }
+        public string BIOSVersion { get; set; }
+        public string BIOSManufacturer { get; set; }
+        public string BIOSReleaseDate { get; set; }
+
+        public string MotherboardDisplayName => $"{Brand} {StringHelper.CleanDisplayName(Product)}";
+    }
+
+    public enum MotherboardBrand
+    {
+        MSI,
+        ASUS,
+        Gigabyte,
+        ASRock,
+        Dell,
+        HP,
+        Lenovo,
+        Unknown
+    }
+}

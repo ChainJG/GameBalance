@@ -1,0 +1,169 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--#region Core Application Surfaces-->
+
+    <!--  Main app backgrounds  -->
+    <Color x:Key="AppBackgroundColour">#15171E</Color>
+    <Color x:Key="TitleBarBackgroundColour">#101116</Color>
+
+    <Color x:Key="PrimaryPanelColour">#111217</Color>
+    <Color x:Key="SecondaryPanelColour">#0D0E12</Color>
+    <Color x:Key="OverlayPanelColour">#252834</Color>
+
+    <!--  Window / page containers  -->
+    <Color x:Key="WindowBackgroundColour">#070709</Color>
+    <Color x:Key="PageBackgroundColour">#0B0C10</Color>
+    <Color x:Key="PanelBorderColour">#2B2D36</Color>
+    <Color x:Key="PanelDividerColour">#20222B</Color>
+
+    <!--#endregion-->
+
+    <!--#region Text Colours-->
+
+    <Color x:Key="TextPrimaryColour">#F2F3F5</Color>
+    <Color x:Key="TextSecondaryColour">#B5BAC1</Color>
+    <Color x:Key="TextDisabledColour">#5F6672</Color>
+    <Color x:Key="TextOnAccentColour">#FFFFFF</Color>
+
+    <!--#endregion-->
+
+    <!--#region Brand / Accent Colours-->
+
+    <!--  Discord-inspired primary accent  -->
+    <Color x:Key="AccentColour">#5865F2</Color>
+    <Color x:Key="AccentHoverColour">#6D78FF</Color>
+    <Color x:Key="AccentPressedColour">#4752C4</Color>
+    <Color x:Key="AccentDisabledColour">#747BC7</Color>
+
+    <!--#endregion-->
+
+    <!--#region Icon Colours-->
+
+    <Color x:Key="IconColor">#DBDEE1</Color>
+    <Color x:Key="IconDisabledColour">#5F6672</Color>
+    <Color x:Key="IconAccentColour">#5865F2</Color>
+
+    <!--#endregion-->
+
+    <!--#region Core Status Colours-->
+
+    <!--  Success / good  -->
+    <Color x:Key="SuccessColour">#23A559</Color>
+    <Color x:Key="RecommendedColour">#23A559</Color>
+    <Color x:Key="OptimisedStatusColour">#10B981</Color>
+
+    <!--  Warning / caution  -->
+    <SolidColorBrush x:Key="WarningColour" Color="#F0B232" />
+    <SolidColorBrush x:Key="CautionColour" Color="#FEE75C" />
+
+    <!--  Error / danger  -->
+    <Color x:Key="ErrorColour">#F23F43</Color>
+    <Color x:Key="DangerColour">#DA373C</Color>
+    <Color x:Key="CriticalColour">#FF5C5C</Color>
+
+    <!--  Info / neutral  -->
+    <Color x:Key="InfoColour">#5865F2</Color>
+    <Color x:Key="NoticeColour">#60A5FA</Color>
+    <Color x:Key="UnknownColour">#A3AAB8</Color>
+    <Color x:Key="DisabledColour">#7D8590</Color>
+
+    <!--#endregion-->
+
+    <!--#region Card Colours-->
+
+    <!--  Neutral cards  -->
+    <Color x:Key="CardBackgroundColour">#171921</Color>
+    <Color x:Key="CardBackgroundHoverColour">#202331</Color>
+    <Color x:Key="CardBackgroundPressedColour">#101218</Color>
+    <Color x:Key="CardBackgroundSelectedColour">#262B45</Color>
+
+    <Color x:Key="CardBorderColour">#2B2D36</Color>
+    <Color x:Key="CardBorderHoverColour">#3C4254</Color>
+    <Color x:Key="CardBorderSelectedColour">#5865F2</Color>
+
+    <!--  Purpose-based card backgrounds  -->
+    <Color x:Key="InfoCardBackgroundColour">#1B1F3F</Color>
+    <Color x:Key="RunningBackgroundColour">#112838</Color>
+    <Color x:Key="RecommendedCardBackgroundColour">#14241B</Color>
+    <Color x:Key="SuccessCardBackgroundColour">#14241B</Color>
+    <Color x:Key="WarningCardBackgroundColour">#2E2413</Color>
+    <Color x:Key="CautionCardBackgroundColour">#302B14</Color>
+    <Color x:Key="ErrorCardBackgroundColour">#2F171B</Color>
+    <Color x:Key="NoticeCardBackgroundColour">#172336</Color>
+    <Color x:Key="DisabledCardBackgroundColour">#17191F</Color>
+
+    <!--  Purpose-based card borders  -->
+    <Color x:Key="InfoCardBorderColour">#5865F2</Color>
+    <Color x:Key="RunningBorderColour">#00C8FF</Color>
+    <Color x:Key="RecommendedCardBorderColour">#23A559</Color>
+    <Color x:Key="SuccessCardBorderColour">#23A559</Color>
+    <Color x:Key="WarningCardBorderColour">#F0B232</Color>
+    <Color x:Key="CautionCardBorderColour">#FEE75C</Color>
+    <Color x:Key="ErrorCardBorderColour">#F23F43</Color>
+    <Color x:Key="NoticeCardBorderColour">#60A5FA</Color>
+    <Color x:Key="DisabledCardBorderColour">#3A3F4D</Color>
+
+    <!--#endregion-->
+
+
+    <!--#region Button Colours-->
+
+    <!--  Default transparent glass button  -->
+    <Color x:Key="ButtonBackgroundColour">#10FFFFFF</Color>
+    <Color x:Key="ButtonBorderColour">#20FFFFFF</Color>
+    <Color x:Key="ButtonMouseOverColour">#22FFFFFF</Color>
+    <Color x:Key="ButtonPressedColour">#33FFFFFF</Color>
+    <Color x:Key="ButtonIsCheckedColour">#335865F2</Color>
+
+    <!--  Primary button  -->
+    <Color x:Key="PrimaryButtonBackgroundColour">#5865F2</Color>
+    <Color x:Key="PrimaryButtonMouseOverColour">#6D78FF</Color>
+    <Color x:Key="PrimaryButtonPressedColour">#4752C4</Color>
+    <Color x:Key="PrimaryButtonBorderColour">#8B95FF</Color>
+    <Color x:Key="PrimaryButtonForegroundColour">#FFFFFF</Color>
+
+    <!--  Secondary button  -->
+    <Color x:Key="SecondaryButtonBackgroundColour">#1E2029</Color>
+    <Color x:Key="SecondaryButtonMouseOverColour">#282C3A</Color>
+    <Color x:Key="SecondaryButtonPressedColour">#151820</Color>
+    <Color x:Key="SecondaryButtonBorderColour">#3C4254</Color>
+    <Color x:Key="SecondaryButtonForegroundColour">#F2F3F5</Color>
+
+    <!--  Error button  -->
+    <Color x:Key="ErrorButtonBackgroundColour">#2F171B</Color>
+    <Color x:Key="ErrorButtonMouseOverColour">#421F25</Color>
+    <Color x:Key="ErrorButtonPressedColour">#221014</Color>
+    <Color x:Key="ErrorButtonBorderColour">#F23F43</Color>
+    <Color x:Key="ErrorButtonForegroundColour">#FFFFFF</Color>
+
+    <!--  Success button  -->
+    <Color x:Key="SuccessButtonBackgroundColour">#14241B</Color>
+    <Color x:Key="SuccessButtonMouseOverColour">#1B3325</Color>
+    <Color x:Key="SuccessButtonPressedColour">#0E1A13</Color>
+    <Color x:Key="SuccessButtonBorderColour">#23A559</Color>
+    <Color x:Key="SuccessButtonForegroundColour">#FFFFFF</Color>
+
+    <!--  Disabled button  -->
+    <Color x:Key="ButtonDisabledBackgroundColour">#101116</Color>
+    <Color x:Key="ButtonDisabledBorderColour">#2B2D36</Color>
+    <Color x:Key="ButtonDisabledForegroundColour">#5F6672</Color>
+
+    <!--#endregion-->
+
+    <!--#region Progress / Loading Colours-->
+
+    <Color x:Key="ProgressTrackColour">#1E2029</Color>
+    <Color x:Key="ProgressFillColour">#5865F2</Color>
+    <Color x:Key="ProgressTrackHoverColour">#282C3A</Color>
+    <Color x:Key="ProgressBorderHoverColour">#3C4254</Color>
+
+    <!--#endregion-->
+
+    <!--#region Tooltip Colours-->
+
+    <Color x:Key="ToolTipBackgroundColour">#1E2029</Color>
+    <Color x:Key="ToolTipBorderColour">#3C4254</Color>
+
+    <!--#endregion-->
+
+</ResourceDictionary>

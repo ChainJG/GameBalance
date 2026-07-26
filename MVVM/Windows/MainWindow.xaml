@@ -1,0 +1,138 @@
+﻿<Window
+    x:Class="GameBalance.MVVM.Windows.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:assists="clr-namespace:GameBalance.MVVM.Utilities.Assists"
+    xmlns:behaviours="clr-namespace:GameBalance.MVVM.Utilities.Behaviors"
+    xmlns:controls="clr-namespace:GameBalance.Framework.Controls"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+    Title="GameBalance"
+    Width="1200"
+    Height="750"
+    MinWidth="1200"
+    MinHeight="750"
+    AllowsTransparency="True"
+    Background="Transparent"
+    ResizeMode="CanResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None">
+
+    <!--#region Application Resize-->
+    <WindowChrome.WindowChrome>
+
+        <shell:WindowChrome
+            CaptionHeight="0"
+            CornerRadius="12"
+            GlassFrameThickness="0"
+            ResizeBorderThickness="8"
+            UseAeroCaptionButtons="False" />
+
+    </WindowChrome.WindowChrome>
+    <!--#endregion-->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <!--#region Main Window-->
+        <Border Style="{StaticResource ApplicationBorderStyle}" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--#region TitleBar-->
+            <Grid
+                Grid.Row="0"
+                Background="{StaticResource TitleBarBackgroundBrush}"
+                MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="120" />
+                </Grid.ColumnDefinitions>
+
+                <!--#region Page Display UI-->
+                <StackPanel
+                    Grid.ColumnSpan="3"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+
+                    <materialDesign:PackIcon Margin="0,0,5,0" Kind="{Binding PageIcon, FallbackValue='cardSearch'}" />
+                    <TextBlock Style="{StaticResource ButtonTitleStyle}" Text="{Binding PageTitle, FallbackValue='Page Title'}" />
+
+                </StackPanel>
+                <!--#endregion-->
+
+                <Separator
+                    Grid.Column="1"
+                    Width="15"
+                    Height="1.5"
+                    Opacity=".2"
+                    Style="{StaticResource VerticalSeparatorStyle}" />
+
+                <!--#region Windows Caption Button (Minimise, Maximise Exit)-->
+                <StackPanel
+                    Grid.Column="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    Orientation="Horizontal">
+
+                    <controls:WindowCaptionButton Command="Minimise" Style="{StaticResource CaptionButtonStyle}" />
+                    <controls:WindowCaptionButton Command="Maximise" Style="{StaticResource CaptionButtonStyle}" />
+                    <controls:WindowCaptionButton
+                        Command="Close"
+                        HoverBackground="{StaticResource ErrorCardBackgroundBrush}"
+                        Style="{StaticResource CaptionButtonStyle}" />
+
+                </StackPanel>
+                <!--#endregion-->
+
+            </Grid>
+            <!--#endregion-->
+
+            <ContentControl Grid.Row="1" Content="{Binding CurrentView}" />
+
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region Dock-->
+        <Grid
+            Grid.Row="1"
+            Width="500"
+            Margin="0,-40,0,0">
+
+            <Border
+                Width="Auto"
+                Height="Auto"
+                Padding="{StaticResource DockPadding}"
+                Background="{StaticResource AppBackgroundBrush}"
+                CornerRadius="{StaticResource DockCornerRadiusOuter}">
+
+                <Border
+                    Width="Auto"
+                    Height="Auto"
+                    Padding="{StaticResource DockPadding}"
+                    Background="{StaticResource TitleBarBackgroundBrush}"
+                    CornerRadius="{StaticResource DockCornerRadiusInner}">
+
+                    <Grid>
+
+                        <controls:DockControl ItemsSource="{Binding DockItems}" SelectionManager="{Binding DockSelection}" />
+
+                    </Grid>
+
+
+                </Border>
+
+            </Border>
+        </Grid>
+        <!--#endregion-->
+    </Grid>
+</Window>

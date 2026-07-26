@@ -1,0 +1,100 @@
+﻿using GameBalance.Core.Results;
+using GameBalance.Diagnostics;
+using GameBalance.Infrastructure.Http;
+using System.Reflection;
+using System.Text.Json;
+
+namespace GameBalance.Initialisation.Update
+{
+    public sealed class GitHubReleaseService
+    {
+        private const string OWNER = "ChainJG";
+        private const string REPO = "GameBalance";
+        private const string API_URL = $"https://api.github.com/repos/{OWNER}/{REPO}/releases/latest";
+
+        private static string CurrentVersion => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.0";
+
+        public static async Task<UpdateReleaseInfo> CheckForUpdatesAsync(IProgress<ProgressResult>? progress = default, CancellationToken token = default)
+        {
+            try
+            {
+                // Report current update check status
+                progress?.Report(
+                    new ProgressResult(
+                        "Checking for updates...",
+                        0));
+
+                // Download latest release JSON from GitHub using the shared HTTP client.
+                var json = await HttpClientProvider.Client.GetStringAsync(API_URL, token);
+
+                // Parse GitHub release response into model
+                var releaseInfo = ParseGitHubRelease(json);
+
+                GameBalanceDebug.Info($"Update: Current version: v{CurrentVersion} | Release version: v{releaseInfo.Version} | Update Available: {releaseInfo.IsUpdateAvailable}");
+
+                // Check if a newer version exists
+                if (releaseInfo.IsUpdateAvailable)
+                {
+                    // Report update found
+                    progress?.Report(
+                        new ProgressResult(
+                            $"Update available v{releaseInfo.Version}",
+                            0));
+
+                    // Handle user update flow
+                    //await GameBoostServices.ShowUpdateDialog(releaseInfo, progress);
+                }
+
+                return releaseInfo;
+            }
+            catch (Exception ex)
+            {
+                GameBalanceDebug.Error("Update check failed", ex);
+
+                // Report update failure
+                progress?.Report(
+                    new ProgressResult(
+                        "Error checking for updates",
+                        100));
+
+                return new UpdateReleaseInfo
+                {
+                    Version = CurrentVersion
+                };
+            }
+        }
+
+        private static UpdateReleaseInfo ParseGitHubRelease(string json)
+        {
+            try
+            {
+                using var doc = JsonDocument.Parse(json);
+                var root = doc.RootElement;
+
+                var version = root.GetProperty("tag_name").GetString()?.TrimStart('v') ?? "unknown";
+                var releaseNotes = root.GetProperty("body").GetString() ?? "";
+
+                string downloadUrl =
+                    root.GetProperty("assets")[0]
+                    .GetProperty("browser_download_url").GetString() ?? "";
+
+                bool isUpdateAvailable = CompareVersions(version, CurrentVersion) > 0;
+
+                return new UpdateReleaseInfo
+                {
+                    Version = version,
+                    DownloadUrl = downloadUrl,
+                    IsUpdateAvailable = isUpdateAvailable
+                };
+            }
+            catch (Exception ex)
+            {
+                GameBalanceDebug.Error("Error parsing GitHub release", ex);
+
+                return new UpdateReleaseInfo { Version = CurrentVersion };
+            }
+        }
+
+        private static int CompareVersions(string version, string currentVersion) => Version.Parse(version).CompareTo(Version.Parse(currentVersion));
+    }
+}
