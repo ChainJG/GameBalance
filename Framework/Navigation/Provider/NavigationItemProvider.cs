@@ -1,5 +1,4 @@
 ﻿using GameBalance.Framework.Navigation.Core;
-using GameBalance.Framework.Navigation.Dock;
 using MaterialDesignThemes.Wpf;
 using System.Collections.ObjectModel;
 using System.Windows.Input;

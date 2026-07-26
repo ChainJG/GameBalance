@@ -12,6 +12,8 @@
                 <ResourceDictionary Source="Styles/Themes/Resources/Brushes.xaml" />
                 <ResourceDictionary Source="Styles/Themes/Resources/Typography.xaml" />
                 <ResourceDictionary Source="Styles/Themes/Resources/Spacing.xaml" />
+                <ResourceDictionary Source="Styles/Themes/Resources/Effects.xaml" />
+                <ResourceDictionary Source="Styles/Core/ConverterDictionary.xaml" />
                 <!--#endregion-->
 
                 <!--#region MaterialDesignThemes Style-->
@@ -26,7 +28,6 @@
                 <!--#endregion-->
 
                 <!--#region Required Style Level 2-->
-                <ResourceDictionary Source="Styles/Core/ConverterDictionary.xaml" />
                 <ResourceDictionary Source="Styles/TextBlock/TextBlockStyles.xaml" />
                 <ResourceDictionary Source="Styles/Icon/PackIconKindStyles.xaml" />
                 <ResourceDictionary Source="Styles/Border/ApplicationBorderStyle.xaml" />

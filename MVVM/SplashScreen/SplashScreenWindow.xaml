@@ -30,7 +30,6 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Command="Close"
-                CornerRadius="{StaticResource ButtonCornerRadius}"
                 Style="{StaticResource CaptionButtonStyle}" />
             <!--#endregion-->
 

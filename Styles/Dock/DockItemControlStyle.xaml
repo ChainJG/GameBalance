@@ -23,6 +23,7 @@
                         Margin="{StaticResource DockItemSpacing}"
                         Command="{Binding Command}"
                         CommandParameter="{Binding CommandParameter}"
+                        IsSelected="{Binding IsSelected}"
                         SelectionManager="{Binding RelativeSource={RelativeSource AncestorType=controls:DockControl}, Path=SelectionManager}" />
                 </DataTemplate>
             </Setter.Value>

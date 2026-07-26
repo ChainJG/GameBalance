@@ -1,11 +1,18 @@
 ﻿using GameBalance.Framework.Core;
 using MaterialDesignThemes.Wpf;
 using System.Windows;
+using System.Windows.Media;
 
 namespace GameBalance.Framework.Controls
 {
+    /// <summary>
+    /// A specialized window caption button that handles minimize, maximize,
+    /// and close actions with visual feedback.
+    /// </summary>
     public class WindowCaptionButton : InteractiveIconButton
     {
+        #region Constructor & Static Setup
+
         static WindowCaptionButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
@@ -13,26 +20,63 @@ namespace GameBalance.Framework.Controls
                 new FrameworkPropertyMetadata(typeof(WindowCaptionButton)));
         }
 
-        #region Command
+        public WindowCaptionButton()
+        {
+            Loaded += OnLoaded;
+        }
+
+        #endregion
+
+        #region Dependency Properties
+
+        /// <summary>
+        /// Gets or sets the window command to execute when clicked.
+        /// </summary>
+        public static readonly DependencyProperty CommandProperty =
+            DependencyProperty.Register(
+                nameof(Command),
+                typeof(WindowCommand),
+                typeof(WindowCaptionButton),
+                new PropertyMetadata(WindowCommand.None, OnCommandChanged));
+
         public WindowCommand Command
         {
             get => (WindowCommand)GetValue(CommandProperty);
             set => SetValue(CommandProperty, value);
         }
 
+        private static void OnCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is WindowCaptionButton button)
+            {
+                button.UpdateCloseButtonAppearance();
+            }
+        }
 
-        public static readonly DependencyProperty CommandProperty =
-            DependencyProperty.Register(
-                nameof(Command),
-                typeof(WindowCommand),
-                typeof(WindowCaptionButton),
-                new PropertyMetadata(WindowCommand.None));
         #endregion
 
-        public WindowCaptionButton()
+        #region Close Button Appearance
+
+        private void UpdateCloseButtonAppearance()
         {
-            Loaded += OnLoaded;
+            if (Command == WindowCommand.Close)
+            {
+                if (HoverBackground == null || HoverBackground == Brushes.Transparent)
+                {
+                    HoverBackground = FindResource("ErrorCardBackgroundBrush") as Brush
+                                      ?? new SolidColorBrush(Color.FromRgb(232, 17, 35));
+                }
+
+                if (HoverBorder == null)
+                {
+                    HoverBorder = FindResource("ErrorCardBackgroundBrush") as Brush;
+                }
+            }
         }
+
+        #endregion
+
+        #region Event Handlers
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
@@ -40,8 +84,13 @@ namespace GameBalance.Framework.Controls
 
             var window = Window.GetWindow(this);
 
-            window?.StateChanged += OnWindowStateChanged;
-            window?.Closed += OnWindowClosed;
+            if (window is not null)
+            {
+                window.StateChanged += OnWindowStateChanged;
+                window.Closed += OnWindowClosed;
+            }
+
+            UpdateCloseButtonAppearance();
         }
 
         private void OnWindowClosed(object? sender, EventArgs e)
@@ -52,57 +101,50 @@ namespace GameBalance.Framework.Controls
                 window.Closed -= OnWindowClosed;
             }
         }
+
         private void OnWindowStateChanged(object? sender, EventArgs e)
         {
             UpdateIcon();
         }
 
+        #endregion
+
+        #region Click Execution
+
         protected override void OnClick()
         {
             base.OnClick();
-
             ExecuteCommand();
         }
 
         private void ExecuteCommand()
         {
-            Window window = Window.GetWindow(this);
+            var window = Window.GetWindow(this);
 
-            if (window == null)
+            if (window is null)
                 return;
-
 
             switch (Command)
             {
                 case WindowCommand.Minimise:
-
                     window.WindowState = WindowState.Minimized;
-
                     break;
-
 
                 case WindowCommand.Maximise:
-
-                    if (window.WindowState == WindowState.Maximized)
-                    {
-                        window.WindowState = WindowState.Normal;
-                        IconKind = PackIconKind.WindowMaximize;
-                    }
-                    else
-                    {
-                        window.WindowState = WindowState.Maximized;
-                        IconKind = PackIconKind.WindowRestore;
-                    }
-
+                    window.WindowState = window.WindowState == WindowState.Maximized
+                        ? WindowState.Normal
+                        : WindowState.Maximized;
                     break;
-
 
                 case WindowCommand.Close:
                     GameBalanceServices.Shutdown();
-
                     break;
             }
         }
+
+        #endregion
+
+        #region Icon Management
 
         private void UpdateIcon()
         {
@@ -114,18 +156,20 @@ namespace GameBalance.Framework.Controls
             IconKind = Command switch
             {
                 WindowCommand.Minimise => PackIconKind.WindowMinimize,
-
                 WindowCommand.Maximise => window.WindowState == WindowState.Maximized
                     ? PackIconKind.WindowRestore
                     : PackIconKind.WindowMaximize,
-
                 WindowCommand.Close => PackIconKind.Close,
-
-                _ => PackIconKind.WindowMaximize
+                _ => IconKind
             };
         }
+
+        #endregion
     }
 
+    /// <summary>
+    /// Defines the available window commands for caption buttons.
+    /// </summary>
     public enum WindowCommand
     {
         None,

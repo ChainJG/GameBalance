@@ -5,6 +5,7 @@ using GameBalance.Framework.Navigation.Dock;
 using GameBalance.Framework.Navigation.Provider;
 using MaterialDesignThemes.Wpf;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace GameBalance.MVVM.ViewModels.Windows
 {
@@ -50,7 +51,6 @@ namespace GameBalance.MVVM.ViewModels.Windows
             PageTitle = item.Name;
             PageIcon = item.Icon;
         }
-
 
         [RelayCommand]
         private void Navigate(PageId page)

@@ -13,7 +13,6 @@ public class DockControl : ItemsControl
             new FrameworkPropertyMetadata(typeof(DockControl)));
     }
 
-
     public DockSelectionManager? SelectionManager
     {
         get => (DockSelectionManager?)GetValue(SelectionManagerProperty);

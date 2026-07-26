@@ -4,33 +4,53 @@
     xmlns:controls="clr-namespace:GameBalance.Framework.Controls">
 
     <Style TargetType="{x:Type controls:InteractiveCard}">
-
-        <Setter Property="CornerRadius" Value="{StaticResource BorderCornerRadius}" />
-        <Setter Property="CardPadding" Value="{StaticResource BorderPadding}" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="CardPadding" Value="12" />
+        <Setter Property="HasShadow" Value="True" />
+        <Setter Property="BaseShadowDepth" Value="6" />
+        <Setter Property="BaseShadowOpacity" Value="0.35" />
+        <Setter Property="ShadowMatchesBackground" Value="True" />
 
         <Setter Property="Template">
-
             <Setter.Value>
-
                 <ControlTemplate TargetType="{x:Type controls:InteractiveCard}">
-
                     <Border
+                        x:Name="PART_Border"
                         Padding="{TemplateBinding CardPadding}"
                         Background="{TemplateBinding CurrentBackground}"
                         BorderBrush="{TemplateBinding CurrentBorder}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{TemplateBinding CornerRadius}">
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        RenderTransformOrigin="0.5,0.5">
 
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        <Border.RenderTransform>
+                            <ScaleTransform />
+                        </Border.RenderTransform>
 
+                        <Border.Effect>
+                            <DropShadowEffect 
+                                x:Name="PART_Shadow"
+                                BlurRadius="{Binding BaseShadowDepth, RelativeSource={RelativeSource TemplatedParent}}"
+                                Opacity="{Binding BaseShadowOpacity, RelativeSource={RelativeSource TemplatedParent}}"
+                                ShadowDepth="2"
+                                Direction="270"
+                                Color="{Binding CurrentBackground, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BackgroundToShadowColorConverter}}" />
+                        </Border.Effect>
+
+                        <ContentPresenter 
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </Border>
 
+                    <ControlTemplate.Triggers>
+                        <!-- Hide shadow when HasShadow is false -->
+                        <Trigger Property="HasShadow" Value="False">
+                            <Setter TargetName="PART_Shadow" Property="Opacity" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
-
             </Setter.Value>
-
         </Setter>
-
     </Style>
 
 </ResourceDictionary>
