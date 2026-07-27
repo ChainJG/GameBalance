@@ -6,7 +6,6 @@
     <Style TargetType="{x:Type controls:DockControl}">
 
         <Setter Property="ItemsPanel">
-
             <Setter.Value>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" />
@@ -14,21 +13,17 @@
             </Setter.Value>
         </Setter>
 
-
         <Setter Property="ItemTemplate">
-
             <Setter.Value>
                 <DataTemplate>
                     <controls:DockItemControl
                         Margin="{StaticResource DockItemSpacing}"
                         Command="{Binding Command}"
                         CommandParameter="{Binding CommandParameter}"
-                        IsSelected="{Binding IsSelected}"
                         SelectionManager="{Binding RelativeSource={RelativeSource AncestorType=controls:DockControl}, Path=SelectionManager}" />
                 </DataTemplate>
             </Setter.Value>
         </Setter>
-
 
         <Setter Property="Template">
             <Setter.Value>

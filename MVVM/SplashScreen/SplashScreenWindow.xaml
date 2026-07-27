@@ -25,11 +25,11 @@
     <Border Style="{StaticResource ApplicationBorderStyle}">
         <Grid>
 
-            <!--#region Windows Caption Button-->
             <controls:WindowCaptionButton
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Command="Close"
+                CornerRadius="{StaticResource ButtonCornerRadius}"
                 Style="{StaticResource CaptionButtonStyle}" />
             <!--#endregion-->
 

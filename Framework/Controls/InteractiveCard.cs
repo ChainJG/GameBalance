@@ -2,14 +2,8 @@
 
 namespace GameBalance.Framework.Controls
 {
-    /// <summary>
-    /// An interactive card control with configurable corner radius and padding.
-    /// Inherits visual state management from InteractiveControl.
-    /// </summary>
     public class InteractiveCard : InteractiveControl
     {
-        #region Constructor & Static Setup
-
         static InteractiveCard()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
@@ -17,19 +11,7 @@ namespace GameBalance.Framework.Controls
                 new FrameworkPropertyMetadata(typeof(InteractiveCard)));
         }
 
-        #endregion
-
-        #region Dependency Properties
-
-        /// <summary>
-        /// Gets or sets the corner radius of the card.
-        /// </summary>
-        public static readonly DependencyProperty CornerRadiusProperty =
-            DependencyProperty.Register(
-                nameof(CornerRadius),
-                typeof(CornerRadius),
-                typeof(InteractiveCard),
-                new PropertyMetadata(new CornerRadius(8)));
+        #region Corner Radius
 
         public CornerRadius CornerRadius
         {
@@ -37,21 +19,31 @@ namespace GameBalance.Framework.Controls
             set => SetValue(CornerRadiusProperty, value);
         }
 
-        /// <summary>
-        /// Gets or sets the padding inside the card.
-        /// </summary>
-        public static readonly DependencyProperty CardPaddingProperty =
+        public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register(
-                nameof(CardPadding),
-                typeof(Thickness),
+                nameof(CornerRadius),
+                typeof(CornerRadius),
                 typeof(InteractiveCard),
-                new PropertyMetadata(new Thickness(12)));
+                new PropertyMetadata(new CornerRadius(8)));
+
+        #endregion
+
+
+        #region Padding
 
         public Thickness CardPadding
         {
             get => (Thickness)GetValue(CardPaddingProperty);
             set => SetValue(CardPaddingProperty, value);
         }
+
+
+        public static readonly DependencyProperty CardPaddingProperty =
+            DependencyProperty.Register(
+                nameof(CardPadding),
+                typeof(Thickness),
+                typeof(InteractiveCard),
+                new PropertyMetadata(new Thickness(12)));
 
         #endregion
     }

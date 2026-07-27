@@ -21,7 +21,6 @@
                 <!--#endregion-->
 
                 <!--#region Required Style Level 1-->
-                <ResourceDictionary Source="Styles/InteractiveCard/InteractiveCardStyle.xaml" />
                 <ResourceDictionary Source="Styles/InteractiveCard/InteractiveControl.xaml" />
                 <ResourceDictionary Source="Styles/InteractiveCard/InteractiveIconButtonStyle.xaml" />
                 <ResourceDictionary Source="Styles/Border/BorderStyles.xaml" />

@@ -1,12 +1,13 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:GameBalance.Framework.Controls">
+    xmlns:controls="clr-namespace:GameBalance.Framework.Controls"
+    xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
 
     <Style
         x:Key="CaptionButtonStyle"
         BasedOn="{StaticResource {x:Type controls:InteractiveIconButton}}"
-        TargetType="{x:Type controls:WindowCaptionButton}">
+        TargetType="{x:Type controls:InteractiveIconButton}">
 
         <Setter Property="Width" Value="40" />
         <Setter Property="Height" Value="40" />
@@ -14,9 +15,6 @@
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="NormalBackground" Value="Transparent" />
-        <Setter Property="NormalBorder" Value="Transparent" />
-        <Setter Property="HasShadow" Value="False" />
-        <Setter Property="ToolTipText" Value="{Binding Command, RelativeSource={RelativeSource Self}, Converter={StaticResource WindowCommandToToolTipConverter}}" />
     </Style>
 
 </ResourceDictionary>
