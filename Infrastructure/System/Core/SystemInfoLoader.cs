@@ -18,6 +18,7 @@ namespace GameBalance.Infrastructure.System.Core
                 new GpuStep(),
                 new MemoryStep(),
                 new MotherboardStep(),
+                new StorageStep(),
                 new OSStep(),
             ];
         }

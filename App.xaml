@@ -2,7 +2,9 @@
     x:Class="GameBalance.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:GameBalance">
+    xmlns:local="clr-namespace:GameBalance"
+    xmlns:viewModels="clr-namespace:GameBalance.MVVM.ViewModels.Navigation"
+    xmlns:views="clr-namespace:GameBalance.MVVM.UserControls.Pages">
     <Application.Resources>
         <ResourceDictionary>
 
@@ -12,7 +14,6 @@
                 <ResourceDictionary Source="Styles/Themes/Resources/Brushes.xaml" />
                 <ResourceDictionary Source="Styles/Themes/Resources/Typography.xaml" />
                 <ResourceDictionary Source="Styles/Themes/Resources/Spacing.xaml" />
-                <ResourceDictionary Source="Styles/Themes/Resources/Effects.xaml" />
                 <ResourceDictionary Source="Styles/Core/ConverterDictionary.xaml" />
                 <!--#endregion-->
 
@@ -23,7 +24,6 @@
                 <!--#region Required Style Level 1-->
                 <ResourceDictionary Source="Styles/InteractiveCard/InteractiveControl.xaml" />
                 <ResourceDictionary Source="Styles/InteractiveCard/InteractiveIconButtonStyle.xaml" />
-                <ResourceDictionary Source="Styles/Border/BorderStyles.xaml" />
                 <!--#endregion-->
 
                 <!--#region Required Style Level 2-->
@@ -31,15 +31,42 @@
                 <ResourceDictionary Source="Styles/Icon/PackIconKindStyles.xaml" />
                 <ResourceDictionary Source="Styles/Border/ApplicationBorderStyle.xaml" />
                 <ResourceDictionary Source="Styles/Separator/VerticalSeparatorStyle.xaml" />
+                <ResourceDictionary Source="Styles/TextBlock/LabelledIconStyle.xaml" />
                 <!--#endregion-->
 
-                <!--#region Button Style-->
+                <!--#region Styles-->
+                <ResourceDictionary Source="Styles/InfoCard/InfoCardStyle.xaml" />
                 <ResourceDictionary Source="Styles/Dock/DockItemControlStyle.xaml" />
                 <ResourceDictionary Source="Styles/Dock/DockItemStyle.xaml" />
                 <ResourceDictionary Source="Styles/Buttons/Titlebar/CaptionButtonStyle.xaml" />
+                <ResourceDictionary Source="Styles/NotificationBanner/NotificationBannerStyle.xaml" />
                 <!--#endregion-->
 
+
+
             </ResourceDictionary.MergedDictionaries>
+
+
+            <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
+                <views:HomeUserControl />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:WindowsViewModel}">
+                <views:WindowsUserControl />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:SystemViewModel}">
+                <views:SystemUserControl />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:StorageViewModel}">
+                <views:StorageUserControl />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:InstallerViewModel}">
+                <views:ApplicationUserControl />
+            </DataTemplate>
+
 
         </ResourceDictionary>
     </Application.Resources>

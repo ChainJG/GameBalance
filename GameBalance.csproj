@@ -41,6 +41,7 @@
     <Folder Include="Infrastructure\FileSystem\Directory\" />
     <Folder Include="Infrastructure\Services\" />
     <Folder Include="MVVM\Utilities\Converters\" />
+    <Folder Include="MVVM\ViewModels\Shared\Controls\" />
   </ItemGroup>
 
   <ItemGroup>

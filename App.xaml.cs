@@ -1,4 +1,5 @@
-﻿using GameBalance.MVVM.SplashScreen;
+﻿using GameBalance.Framework.Core;
+using GameBalance.MVVM.SplashScreen;
 using GameBalance.MVVM.Windows;
 using GameBalance.Styles.Themes.Core;
 using System.Windows;
@@ -39,7 +40,7 @@ namespace GameBalance
             splashWindow.DataContext = splashViewModel;
             splashWindow.Show();
 
-            splashViewModel.StartupCompleted += () =>
+            GameBalanceUI.StartupCompleted += () =>
             {
                 mainWindow.Show();
                 splashWindow.Close();

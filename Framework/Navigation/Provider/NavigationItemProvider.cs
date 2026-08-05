@@ -5,9 +5,18 @@ using System.Windows.Input;
 
 namespace GameBalance.Framework.Navigation.Provider
 {
+    public enum PageId
+    {
+        Home,
+        Windows,
+        System,
+        Storage,
+        Installer
+    }
+
     public static class NavigationItemProvider
     {
-        public static ObservableCollection<ActionItem> GetItems(ICommand navigateCommand)
+        public static ObservableCollection<DockEntry> GetItems(ICommand navigateCommand)
         {
             return
             [
@@ -43,10 +52,8 @@ namespace GameBalance.Framework.Navigation.Provider
             ];
         }
 
-
-        private static ActionItem Create(string name, PackIconKind icon, PageId page, ICommand command)
-        {
-            return new ActionItem
+        private static DockEntry Create(string name, PackIconKind icon, PageId page, ICommand command) =>
+            new()
             {
                 Name = name,
                 Icon = icon,
@@ -54,15 +61,5 @@ namespace GameBalance.Framework.Navigation.Provider
                 CommandParameter = page,
                 CanSelect = true
             };
-        }
-    }
-
-    public enum PageId
-    {
-        Home,
-        Windows,
-        System,
-        Storage,
-        Installer
     }
 }

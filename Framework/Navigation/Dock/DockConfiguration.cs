@@ -4,7 +4,8 @@ namespace GameBalance.Framework.Navigation.Dock
 {
     public class DockConfiguration
     {
-        public IList<ActionItem> Items { get; init; } = [];
+        public IList<DockEntry> Items { get; init; } = [];
         public bool ShowGlobalButton { get; init; } = false;
     }
+
 }

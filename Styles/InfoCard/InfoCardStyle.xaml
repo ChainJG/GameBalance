@@ -1,0 +1,74 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behaviours="clr-namespace:GameBalance.MVVM.Utilities.Behaviors"
+    xmlns:controls="clr-namespace:GameBalance.Framework.Controls"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <Style BasedOn="{StaticResource {x:Type controls:InteractiveIconButton}}" TargetType="{x:Type controls:InfoCardControl}">
+
+        <Setter Property="InfoState" Value="{Binding State}" />
+        <Setter Property="IsInteractive" Value="{Binding IsInteractive}" />
+        <Setter Property="Width" Value="150" />
+        <Setter Property="Height" Value="150" />
+
+        <Setter Property="Margin" Value="{StaticResource SeparatorRightPadding}" />
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:InfoCardControl}">
+                    <Border
+                        Padding="{TemplateBinding CardPadding}"
+                        Background="{TemplateBinding CurrentBackground}"
+                        BorderBrush="{TemplateBinding CurrentBorder}"
+                        BorderThickness="1"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!--#region Title Text & Icon-->
+                            <controls:LabelledIconControl
+                                HorizontalAlignment="Left"
+                                IconKind="{Binding TitleIcon}"
+                                Text="{Binding TitleText}" />
+
+                            <!--#region State Icon-->
+                            <materialDesign:PackIcon
+                                Grid.Row="0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                Kind="{TemplateBinding IconKind}" />
+
+                            <!--#region Body Text-->
+                            <TextBlock
+                                Grid.Row="1"
+                                FontSize="15"
+                                Style="{StaticResource TitleStyle}"
+                                Text="{Binding BodyText}"
+                                TextWrapping="WrapWithOverflow" />
+
+                            <!--#region Footer Text-->
+                            <TextBlock
+                                Grid.Row="2"
+                                Style="{StaticResource ButtonTitleStyle}"
+                                Text="{Binding FooterText}"
+                                TextWrapping="WrapWithOverflow" />
+                        </Grid>
+
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+
+    </Style>
+
+
+</ResourceDictionary>

@@ -6,6 +6,7 @@
     xmlns:behaviours="clr-namespace:GameBalance.MVVM.Utilities.Behaviors"
     xmlns:controls="clr-namespace:GameBalance.Framework.Controls"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:notifications="clr-namespace:GameBalance.Framework.Notifications"
     xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
     Title="GameBalance"
     Width="1200"
@@ -15,6 +16,7 @@
     AllowsTransparency="True"
     Background="Transparent"
     ResizeMode="CanResize"
+    Topmost="True"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None">
 
@@ -23,7 +25,7 @@
 
         <shell:WindowChrome
             CaptionHeight="0"
-            CornerRadius="12"
+            CornerRadius="{StaticResource 12CornerRadiusOuter}"
             GlassFrameThickness="0"
             ResizeBorderThickness="8"
             UseAeroCaptionButtons="False" />
@@ -43,6 +45,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
@@ -58,16 +61,10 @@
                 </Grid.ColumnDefinitions>
 
                 <!--#region Page Display UI-->
-                <StackPanel
+                <controls:LabelledIconControl
                     Grid.ColumnSpan="3"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Orientation="Horizontal">
-
-                    <materialDesign:PackIcon Margin="0,0,5,0" Kind="{Binding PageIcon, FallbackValue='cardSearch'}" />
-                    <TextBlock Style="{StaticResource ButtonTitleStyle}" Text="{Binding PageTitle, FallbackValue='Page Title'}" />
-
-                </StackPanel>
+                    IconKind="{Binding PageIcon}"
+                    Text="{Binding PageTitle}" />
                 <!--#endregion-->
 
                 <Separator
@@ -84,12 +81,9 @@
                     VerticalAlignment="Stretch"
                     Orientation="Horizontal">
 
-                    <controls:WindowCaptionButton Command="Minimise" Style="{StaticResource CaptionButtonStyle}" />
-                    <controls:WindowCaptionButton Command="Maximise" Style="{StaticResource CaptionButtonStyle}" />
-                    <controls:WindowCaptionButton
-                        Command="Close"
-                        HoverBackground="{StaticResource ErrorCardBackgroundBrush}"
-                        Style="{StaticResource CaptionButtonStyle}" />
+                    <controls:WindowCaptionControl Command="Minimise" Style="{StaticResource CaptionButtonStyle}" />
+                    <controls:WindowCaptionControl Command="Maximise" Style="{StaticResource CaptionButtonStyle}" />
+                    <controls:WindowCaptionControl Command="Close" Style="{StaticResource CaptionButtonStyle}" />
 
                 </StackPanel>
                 <!--#endregion-->
@@ -97,14 +91,19 @@
             </Grid>
             <!--#endregion-->
 
-            <ContentControl Grid.Row="1" Content="{Binding CurrentView}" />
+            <controls:NotificationBannerControl Grid.Row="1" NotificationItem="{Binding CurrentNotification, Source={x:Static notifications:NotificationService.State}}" />
+
+            <ContentControl
+                Grid.Row="2"
+                Margin="{StaticResource 20Padding}"
+                Content="{Binding CurrentView}" />
 
         </Grid>
         <!--#endregion-->
 
         <!--#region Dock-->
         <Grid
-            Grid.Row="1"
+            Grid.Row="2"
             Width="500"
             Margin="0,-40,0,0">
 
@@ -134,5 +133,6 @@
             </Border>
         </Grid>
         <!--#endregion-->
+
     </Grid>
 </Window>

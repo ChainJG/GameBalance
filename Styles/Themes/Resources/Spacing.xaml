@@ -58,4 +58,9 @@
     <Thickness x:Key="SeparatorRightPadding">0 0 10 0</Thickness>
     <Thickness x:Key="SeparatorBottomPadding">0 0 0 10</Thickness>
 
+    <Thickness x:Key="SeparatorSmallTopPadding">0 5 0 0</Thickness>
+    <Thickness x:Key="SeparatorSmallLeftPadding">5 0 0 0</Thickness>
+    <Thickness x:Key="SeparatorSmallRightPadding">0 0 5 0</Thickness>
+    <Thickness x:Key="SeparatorSmallBottomPadding">0 0 0 55</Thickness>
+
 </ResourceDictionary>

@@ -4,11 +4,11 @@ namespace GameBalance.Framework.Navigation.Dock
 {
     public sealed class DockSelectionManager
     {
-        public ActionItem? SelectedItem { get; private set; }
+        public DockEntry? SelectedItem { get; private set; }
 
-        public event Action<ActionItem?>? SelectionChanged;
+        public event Action<DockEntry?>? SelectionChanged;
 
-        public void Select(ActionItem item)
+        public void Select(DockEntry item)
         {
             if (!item.CanSelect)
                 return;
@@ -24,9 +24,9 @@ namespace GameBalance.Framework.Navigation.Dock
             SelectionChanged?.Invoke(SelectedItem);
         }
 
-        public void Select(IEnumerable<ActionItem> items, object parameter)
+        public void Select(IEnumerable<DockEntry> items, object parameter)
         {
-            ActionItem? item = items.FirstOrDefault(
+            DockEntry? item = items.FirstOrDefault(
                 x => Equals(x.CommandParameter, parameter));
 
             if (item is null)

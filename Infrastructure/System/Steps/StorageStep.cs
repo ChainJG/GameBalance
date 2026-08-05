@@ -1,10 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GameBalance.Core.Interfaces;
+using GameBalance.Infrastructure.System.Core;
+using GameBalance.Infrastructure.System.Providers;
 
 namespace GameBalance.Infrastructure.System.Steps
 {
-    internal class StorageStep
+    public class StorageStep : ISystemInfoStep
     {
+        public string Name => "Reading Storage";
+
+        public Task ExecuteAsync(SystemInfo info, CancellationToken token)
+        {
+            token.ThrowIfCancellationRequested();
+
+            info.Storage = StorageInfoProvider.FetchStorageInformation();
+
+            return Task.CompletedTask;
+        }
     }
 }

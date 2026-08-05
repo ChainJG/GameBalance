@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace GameBalance.Framework.Navigation.Core
 {
-    public partial class ActionItem : ObservableObject
+    public partial class DockEntry : ObservableObject
     {
         public required string Name { get; init; }
 

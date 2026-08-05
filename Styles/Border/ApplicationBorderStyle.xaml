@@ -2,8 +2,9 @@
 
     <Style x:Key="ApplicationBorderStyle" TargetType="{x:Type Border}">
         <Setter Property="Background" Value="{StaticResource AppBackgroundBrush}" />
-        <Setter Property="CornerRadius" Value="{StaticResource 16CornerRadiusOuter}" />
+        <Setter Property="CornerRadius" Value="{StaticResource 12CornerRadiusOuter}" />
         <Setter Property="Padding" Value="{StaticResource 16Padding}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
     </Style>
 
 </ResourceDictionary>

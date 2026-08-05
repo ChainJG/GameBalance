@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using GameBalance.Core.Results;
 using GameBalance.Diagnostics;
+using GameBalance.Framework.Core;
 using GameBalance.Initialisation.Core;
 
 namespace GameBalance.MVVM.SplashScreen
@@ -16,8 +17,6 @@ namespace GameBalance.MVVM.SplashScreen
         [ObservableProperty]
         public int progressPercentage = 0;
         #endregion
-
-        public event Action? StartupCompleted;
 
         public async Task InitialiseApplicationAsync(CancellationToken token)
         {
@@ -37,13 +36,8 @@ namespace GameBalance.MVVM.SplashScreen
             }
             finally
             {
-                CompleteStartupAsync();
+                GameBalanceUI.OnStartupCompleted();
             }
-        }
-
-        private void CompleteStartupAsync()
-        {
-            StartupCompleted?.Invoke();
         }
 
         private void UpdateProgress(ProgressResult result)

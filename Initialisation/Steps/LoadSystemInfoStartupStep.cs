@@ -7,7 +7,7 @@ namespace GameBalance.Initialisation.Steps
 {
     public class LoadSystemInfoStartupStep : IStartupStep
     {
-        public string Name => "Loading system information";
+        public string Name => "Load system information";
 
         public async Task<ModuleResult> ExecuteAsync(IProgress<ProgressResult> progress, CancellationToken token)
         {

@@ -53,8 +53,8 @@
     <Color x:Key="OptimisedStatusColour">#10B981</Color>
 
     <!--  Warning / caution  -->
-    <SolidColorBrush x:Key="WarningColour" Color="#F0B232" />
-    <SolidColorBrush x:Key="CautionColour" Color="#FEE75C" />
+    <Color x:Key="WarningColour">#F0B232</Color>
+    <Color x:Key="CautionColour">#FEE75C</Color>
 
     <!--  Error / danger  -->
     <Color x:Key="ErrorColour">#F23F43</Color>
@@ -71,7 +71,10 @@
 
     <!--#region Card Colours-->
 
-    <!--  Neutral cards  -->
+    <!--  ================================================  -->
+    <!--  Neutral Cards  -->
+    <!--  ================================================  -->
+
     <Color x:Key="CardBackgroundColour">#171921</Color>
     <Color x:Key="CardBackgroundHoverColour">#202331</Color>
     <Color x:Key="CardBackgroundPressedColour">#101218</Color>
@@ -79,71 +82,189 @@
 
     <Color x:Key="CardBorderColour">#2B2D36</Color>
     <Color x:Key="CardBorderHoverColour">#3C4254</Color>
+    <Color x:Key="CardBorderPressedColour">#23262F</Color>
     <Color x:Key="CardBorderSelectedColour">#5865F2</Color>
 
-    <!--  Purpose-based card backgrounds  -->
-    <Color x:Key="InfoCardBackgroundColour">#1B1F3F</Color>
-    <Color x:Key="RunningBackgroundColour">#112838</Color>
-    <Color x:Key="RecommendedCardBackgroundColour">#14241B</Color>
-    <Color x:Key="SuccessCardBackgroundColour">#14241B</Color>
-    <Color x:Key="WarningCardBackgroundColour">#2E2413</Color>
-    <Color x:Key="CautionCardBackgroundColour">#302B14</Color>
-    <Color x:Key="ErrorCardBackgroundColour">#2F171B</Color>
-    <Color x:Key="NoticeCardBackgroundColour">#172336</Color>
-    <Color x:Key="DisabledCardBackgroundColour">#17191F</Color>
+    <!--  ================================================  -->
+    <!--  Information  -->
+    <!--  ================================================  -->
 
-    <!--  Purpose-based card borders  -->
-    <Color x:Key="InfoCardBorderColour">#5865F2</Color>
-    <Color x:Key="RunningBorderColour">#00C8FF</Color>
+    <Color x:Key="InfoCardBackgroundColour">#10FFFFFF</Color>
+    <Color x:Key="InfoCardBackgroundHoverColour">#22FFFFFF</Color>
+    <Color x:Key="InfoCardBackgroundPressedColour">#33FFFFFF</Color>
+    <Color x:Key="InfoCardBackgroundSelectedColour">#33FFFFFF</Color>
+
+    <Color x:Key="InfoCardBorderColour">#20FFFFFF</Color>
+    <Color x:Key="InfoCardBorderHoverColour">#33FFFFFF</Color>
+    <Color x:Key="InfoCardBorderPressedColour">#22FFFFFF</Color>
+    <Color x:Key="InfoCardBorderSelectedColour">#33FFFFFF</Color>
+
+    <!--  ================================================  -->
+    <!--  Running  -->
+    <!--  ================================================  -->
+
+    <Color x:Key="RunningCardBackgroundColour">#112838</Color>
+    <Color x:Key="RunningCardBackgroundHoverColour">#17374C</Color>
+    <Color x:Key="RunningCardBackgroundPressedColour">#0C1F2C</Color>
+    <Color x:Key="RunningCardBackgroundSelectedColour">#1F4B67</Color>
+
+
+    <Color x:Key="RunningCardBorderColour">#00C8FF</Color>
+    <Color x:Key="RunningCardBorderHoverColour">#45D7FF</Color>
+    <Color x:Key="RunningCardBorderPressedColour">#00A7D6</Color>
+    <Color x:Key="RunningCardBorderSelectedColour">#72E2FF</Color>
+
+    <!--  ================================================  -->
+    <!--  Recommended  -->
+    <!--  ================================================  -->
+
+    <Color x:Key="RecommendedCardBackgroundColour">#14241B</Color>
+    <Color x:Key="RecommendedCardBackgroundHoverColour">#1B3124</Color>
+    <Color x:Key="RecommendedCardBackgroundPressedColour">#101C15</Color>
+    <Color x:Key="RecommendedCardBackgroundSelectedColour">#244431</Color>
+
     <Color x:Key="RecommendedCardBorderColour">#23A559</Color>
+    <Color x:Key="RecommendedCardBorderHoverColour">#38C172</Color>
+    <Color x:Key="RecommendedCardBorderPressedColour">#1C8748</Color>
+    <Color x:Key="RecommendedCardBorderSelectedColour">#4AD97F</Color>
+
+    <!--  ================================================  -->
+    <!--  Success  -->
+    <!--  ================================================  -->
+
+    <Color x:Key="SuccessCardBackgroundColour">#14241B</Color>
+    <Color x:Key="SuccessCardBackgroundHoverColour">#1B3124</Color>
+    <Color x:Key="SuccessCardBackgroundPressedColour">#101C15</Color>
+    <Color x:Key="SuccessCardBackgroundSelectedColour">#244431</Color>
+
     <Color x:Key="SuccessCardBorderColour">#23A559</Color>
+    <Color x:Key="SuccessCardBorderHoverColour">#38C172</Color>
+    <Color x:Key="SuccessCardBorderPressedColour">#1C8748</Color>
+    <Color x:Key="SuccessCardBorderSelectedColour">#4AD97F</Color>
+
+    <!--  ================================================  -->
+    <!--  Warning  -->
+    <!--  ================================================  -->
+
+    <Color x:Key="WarningCardBackgroundColour">#2E2413</Color>
+    <Color x:Key="WarningCardBackgroundHoverColour">#3B2E18</Color>
+    <Color x:Key="WarningCardBackgroundPressedColour">#241C0F</Color>
+    <Color x:Key="WarningCardBackgroundSelectedColour">#4A391C</Color>
+
     <Color x:Key="WarningCardBorderColour">#F0B232</Color>
+    <Color x:Key="WarningCardBorderHoverColour">#F5C55B</Color>
+    <Color x:Key="WarningCardBorderPressedColour">#D4981D</Color>
+    <Color x:Key="WarningCardBorderSelectedColour">#FFD166</Color>
+
+    <!--  ================================================  -->
+    <!--  Caution  -->
+    <!--  ================================================  -->
+
+    <Color x:Key="CautionCardBackgroundColour">#302B14</Color>
+    <Color x:Key="CautionCardBackgroundHoverColour">#40381A</Color>
+    <Color x:Key="CautionCardBackgroundPressedColour">#26220F</Color>
+    <Color x:Key="CautionCardBackgroundSelectedColour">#554A21</Color>
+
     <Color x:Key="CautionCardBorderColour">#FEE75C</Color>
+    <Color x:Key="CautionCardBorderHoverColour">#FFF07D</Color>
+    <Color x:Key="CautionCardBorderPressedColour">#E4CF48</Color>
+    <Color x:Key="CautionCardBorderSelectedColour">#FFF4A3</Color>
+
+    <!--  ================================================  -->
+    <!--  Error  -->
+    <!--  ================================================  -->
+
+    <Color x:Key="ErrorCardBackgroundColour">#2F171B</Color>
+    <Color x:Key="ErrorCardBackgroundHoverColour">#3E1E24</Color>
+    <Color x:Key="ErrorCardBackgroundPressedColour">#251216</Color>
+    <Color x:Key="ErrorCardBackgroundSelectedColour">#57242C</Color>
+
     <Color x:Key="ErrorCardBorderColour">#F23F43</Color>
+    <Color x:Key="ErrorCardBorderHoverColour">#FF6367</Color>
+    <Color x:Key="ErrorCardBorderPressedColour">#D93034</Color>
+    <Color x:Key="ErrorCardBorderSelectedColour">#FF8084</Color>
+
+    <!--  ================================================  -->
+    <!--  Notice  -->
+    <!--  ================================================  -->
+
+    <Color x:Key="NoticeCardBackgroundColour">#172336</Color>
+    <Color x:Key="NoticeCardBackgroundHoverColour">#1F3048</Color>
+    <Color x:Key="NoticeCardBackgroundPressedColour">#111B2A</Color>
+    <Color x:Key="NoticeCardBackgroundSelectedColour">#29496A</Color>
+
     <Color x:Key="NoticeCardBorderColour">#60A5FA</Color>
+    <Color x:Key="NoticeCardBorderHoverColour">#8BC2FF</Color>
+    <Color x:Key="NoticeCardBorderPressedColour">#438FEC</Color>
+    <Color x:Key="NoticeCardBorderSelectedColour">#A8D4FF</Color>
+
+    <!--  ================================================  -->
+    <!--  Disabled  -->
+    <!--  ================================================  -->
+
+    <Color x:Key="DisabledCardBackgroundColour">#17191F</Color>
     <Color x:Key="DisabledCardBorderColour">#3A3F4D</Color>
 
     <!--#endregion-->
 
-
     <!--#region Button Colours-->
 
-    <!--  Default transparent glass button  -->
+    <!--  ================================================  -->
+    <!--  Default transparent glass Button  -->
+    <!--  ================================================  -->
     <Color x:Key="ButtonBackgroundColour">#10FFFFFF</Color>
     <Color x:Key="ButtonBorderColour">#20FFFFFF</Color>
-    <Color x:Key="ButtonMouseOverColour">#22FFFFFF</Color>
+    <Color x:Key="ButtonHoverColour">#22FFFFFF</Color>
     <Color x:Key="ButtonPressedColour">#33FFFFFF</Color>
     <Color x:Key="ButtonIsCheckedColour">#335865F2</Color>
 
-    <!--  Primary button  -->
-    <Color x:Key="PrimaryButtonBackgroundColour">#5865F2</Color>
-    <Color x:Key="PrimaryButtonMouseOverColour">#6D78FF</Color>
-    <Color x:Key="PrimaryButtonPressedColour">#4752C4</Color>
-    <Color x:Key="PrimaryButtonBorderColour">#8B95FF</Color>
-    <Color x:Key="PrimaryButtonForegroundColour">#FFFFFF</Color>
+    <!--  ================================================  -->
+    <!--  Primary Button  -->
+    <!--  ================================================  -->
 
-    <!--  Secondary button  -->
+    <!--  Primary Background  -->
+    <Color x:Key="PrimaryButtonBackgroundColour">#5865F2</Color>
+    <Color x:Key="PrimaryButtonBackgroundHoverColour">#242A3A</Color>
+    <Color x:Key="PrimaryButtonBackgroundPressedColour">#181B26</Color>
+    <Color x:Key="PrimaryButtonBackgroundSelectedColour">#6B8FD6</Color>
+    <Color x:Key="PrimaryButtonForegroundColour">#FFFFFF</Color>
+    <!--  Primary Border  -->
+    <Color x:Key="PrimaryButtonBorderColour">#707BFF</Color>
+    <Color x:Key="PrimaryButtonBorderHoverColour">#3B435A</Color>
+    <Color x:Key="PrimaryButtonBorderPressedColour">#2A2F42</Color>
+    <Color x:Key="PrimaryButtonBorderSelectedColour">#8FB8FF</Color>
+
+
+    <!--  ================================================  -->
+    <!--  Secondary Button  -->
+    <!--  ================================================  -->
     <Color x:Key="SecondaryButtonBackgroundColour">#1E2029</Color>
-    <Color x:Key="SecondaryButtonMouseOverColour">#282C3A</Color>
+    <Color x:Key="SecondaryButtonHoverColour">#282C3A</Color>
     <Color x:Key="SecondaryButtonPressedColour">#151820</Color>
     <Color x:Key="SecondaryButtonBorderColour">#3C4254</Color>
     <Color x:Key="SecondaryButtonForegroundColour">#F2F3F5</Color>
 
-    <!--  Error button  -->
+    <!--  ================================================  -->
+    <!--  Error Button  -->
+    <!--  ================================================  -->
     <Color x:Key="ErrorButtonBackgroundColour">#2F171B</Color>
-    <Color x:Key="ErrorButtonMouseOverColour">#421F25</Color>
+    <Color x:Key="ErrorButtonHoverColour">#421F25</Color>
     <Color x:Key="ErrorButtonPressedColour">#221014</Color>
     <Color x:Key="ErrorButtonBorderColour">#F23F43</Color>
     <Color x:Key="ErrorButtonForegroundColour">#FFFFFF</Color>
 
-    <!--  Success button  -->
+    <!--  ================================================  -->
+    <!--  Success Button  -->
+    <!--  ================================================  -->
     <Color x:Key="SuccessButtonBackgroundColour">#14241B</Color>
-    <Color x:Key="SuccessButtonMouseOverColour">#1B3325</Color>
+    <Color x:Key="SuccessButtonHoverColour">#1B3325</Color>
     <Color x:Key="SuccessButtonPressedColour">#0E1A13</Color>
     <Color x:Key="SuccessButtonBorderColour">#23A559</Color>
     <Color x:Key="SuccessButtonForegroundColour">#FFFFFF</Color>
 
-    <!--  Disabled button  -->
+    <!--  ================================================  -->
+    <!--  Disabled Button  -->
+    <!--  ================================================  -->
     <Color x:Key="ButtonDisabledBackgroundColour">#101116</Color>
     <Color x:Key="ButtonDisabledBorderColour">#2B2D36</Color>
     <Color x:Key="ButtonDisabledForegroundColour">#5F6672</Color>

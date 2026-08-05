@@ -1,11 +1,19 @@
-﻿using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 
 namespace GameBalance.Framework.Controls
 {
+    public enum VisualState
+    {
+        Normal,
+        Hover,
+        Pressed,
+        Selected,
+        Focused,
+        Disabled
+    }
     public abstract class InteractiveControl : ButtonBase
     {
         #region Constructor
@@ -305,15 +313,5 @@ namespace GameBalance.Framework.Controls
         }
         #endregion
 
-    }
-
-    public enum VisualState
-    {
-        Normal,
-        Hover,
-        Pressed,
-        Selected,
-        Focused,
-        Disabled
     }
 }

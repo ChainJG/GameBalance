@@ -29,16 +29,12 @@ namespace GameBalance.Framework.Controls
         {
             base.OnClick();
 
-            if (DataContext is not ActionItem item)
+            if (DataContext is not DockEntry item)
                 return;
 
             // Visual Selection
             if (item.CanSelect)
                 SelectionManager?.Select(item);
-
-            // Action Command
-            if (Command?.CanExecute(CommandParameter) == true)
-                Command.Execute(CommandParameter);
         }
     }
 }

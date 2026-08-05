@@ -31,8 +31,6 @@ namespace GameBalance.Infrastructure.System.Providers
 
                     var registryVramBytes = TryGetDedicatedVramFromRegistry(gpu.PNPDeviceID);
                     gpu.AdapterRAM = MathHelper.FormatBytes(registryVramBytes);
-
-                    return gpu;
                 }
             }
             catch (Exception ex)

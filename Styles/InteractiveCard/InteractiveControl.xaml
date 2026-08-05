@@ -7,17 +7,19 @@
     <Style TargetType="{x:Type controls:InteractiveCard}">
 
         <!--  Default Card Theme  -->
-        <Setter Property="NormalBackground" Value="{DynamicResource CardBackgroundBrush}" />
-        <Setter Property="HoverBackground" Value="{DynamicResource CardBackgroundHoverBrush}" />
-        <Setter Property="PressedBackground" Value="{DynamicResource CardBackgroundPressedBrush}" />
-        <Setter Property="SelectedBackground" Value="{DynamicResource CardBackgroundSelectedBrush}" />
-        <Setter Property="DisabledBackground" Value="{DynamicResource DisabledCardBackgroundBrush}" />
+        <Setter Property="NormalBackground" Value="{DynamicResource PrimaryButtonBackgroundBrush}" />
+        <Setter Property="HoverBackground" Value="{DynamicResource PrimaryButtonBackgroundHoverBrush}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource PrimaryButtonBackgroundPressedBrush}" />
+        <Setter Property="SelectedBackground" Value="{DynamicResource PrimaryButtonBackgroundSelectedBrush}" />
+        <Setter Property="DisabledBackground" Value="{DynamicResource ButtonDisabledBackgroundBrush}" />
 
-        <Setter Property="NormalBorder" Value="{DynamicResource CardBorderBrush}" />
-        <Setter Property="HoverBorder" Value="{DynamicResource CardBorderHoverBrush}" />
-        <Setter Property="PressedBorder" Value="{DynamicResource CardBorderPressedBrush}" />
-        <Setter Property="SelectedBorder" Value="{DynamicResource CardBorderSelectedBrush}" />
-        <Setter Property="DisabledBorder" Value="{DynamicResource DisabledCardBorderBrush}" />
+        <Setter Property="NormalBorder" Value="{DynamicResource PrimaryButtonBorderBrush}" />
+        <Setter Property="HoverBorder" Value="{DynamicResource PrimaryButtonBorderHoverBrush}" />
+        <Setter Property="PressedBorder" Value="{DynamicResource PrimaryButtonBorderPressedBrush}" />
+        <Setter Property="SelectedBorder" Value="{DynamicResource PrimaryButtonBorderSelectedBrush}" />
+        <Setter Property="DisabledBorder" Value="{DynamicResource ButtonDisabledBorderBrush}" />
+
+        <Setter Property="BorderThickness" Value="1" />
 
         <Setter Property="Template">
             <Setter.Value>

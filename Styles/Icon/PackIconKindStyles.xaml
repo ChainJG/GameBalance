@@ -3,8 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:behaviours="clr-namespace:GameBalance.MVVM.Utilities.Behaviors"
     xmlns:controls="clr-namespace:GameBalance.MVVM.UserControls.Shared.Controls"
-    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-    xmlns:ui="clr-namespace:GameBalance.MVVM.Utilities.Properties">
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Style x:Key="BaseIconStyle" TargetType="{x:Type materialDesign:PackIcon}">
         <Setter Property="Foreground" Value="{StaticResource IconBrush}" />

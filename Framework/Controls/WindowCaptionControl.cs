@@ -4,16 +4,25 @@ using System.Windows;
 
 namespace GameBalance.Framework.Controls
 {
-    public class WindowCaptionButton : InteractiveIconButton
+    public class WindowCaptionControl : InteractiveIconButton
     {
-        static WindowCaptionButton()
+        public enum WindowCommand
         {
-            DefaultStyleKeyProperty.OverrideMetadata(
-                typeof(WindowCaptionButton),
-                new FrameworkPropertyMetadata(typeof(WindowCaptionButton)));
+            None,
+            CloseWindow, 
+            Minimise,
+            Maximise,
+            Close
         }
 
-        #region Command
+        static WindowCaptionControl()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(
+                typeof(WindowCaptionControl),
+                new FrameworkPropertyMetadata(typeof(WindowCaptionControl)));
+        }
+
+        #region Command Property
         public WindowCommand Command
         {
             get => (WindowCommand)GetValue(CommandProperty);
@@ -25,32 +34,31 @@ namespace GameBalance.Framework.Controls
             DependencyProperty.Register(
                 nameof(Command),
                 typeof(WindowCommand),
-                typeof(WindowCaptionButton),
+                typeof(WindowCaptionControl),
                 new PropertyMetadata(WindowCommand.None));
         #endregion
 
-        public WindowCaptionButton()
+        public WindowCaptionControl()
         {
             Loaded += OnLoaded;
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
-            UpdateIcon();
-
             var window = Window.GetWindow(this);
 
             window?.StateChanged += OnWindowStateChanged;
             window?.Closed += OnWindowClosed;
+
+            UpdateIcon();
         }
 
         private void OnWindowClosed(object? sender, EventArgs e)
         {
-            if (sender is Window window)
-            {
-                window.StateChanged -= OnWindowStateChanged;
-                window.Closed -= OnWindowClosed;
-            }
+            var window = Window.GetWindow(this);
+
+            window?.StateChanged -= OnWindowStateChanged;
+            window?.Closed -= OnWindowClosed;
         }
         private void OnWindowStateChanged(object? sender, EventArgs e)
         {
@@ -78,13 +86,15 @@ namespace GameBalance.Framework.Controls
                     break;
 
                 case WindowCommand.Maximise:
-                    window.WindowState = window.WindowState == WindowState.Maximized
-                        ? WindowState.Normal
-                        : WindowState.Maximized;
+                    window.WindowState = window.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
                     break;
 
                 case WindowCommand.Close:
                     GameBalanceServices.Shutdown();
+                    break;
+
+                case WindowCommand.CloseWindow:
+                    window.Close();
                     break;
             }
         }
@@ -99,20 +109,11 @@ namespace GameBalance.Framework.Controls
             IconKind = Command switch
             {
                 WindowCommand.Minimise => PackIconKind.WindowMinimize,
-                WindowCommand.Maximise => window.WindowState == WindowState.Maximized
-                    ? PackIconKind.WindowRestore
-                    : PackIconKind.WindowMaximize,
+                WindowCommand.Maximise => window.WindowState == WindowState.Maximized ? PackIconKind.WindowRestore : PackIconKind.WindowMaximize,
                 WindowCommand.Close => PackIconKind.Close,
+                WindowCommand.CloseWindow => PackIconKind.Close,
                 _ => IconKind
             };
         }
-    }
-
-    public enum WindowCommand
-    {
-        None,
-        Minimise,
-        Maximise,
-        Close
     }
 }

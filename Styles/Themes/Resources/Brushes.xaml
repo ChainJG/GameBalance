@@ -62,34 +62,134 @@
 
     <!--#region Card Brushes-->
 
-    <SolidColorBrush x:Key="CardBackgroundBrush" Color="{DynamicResource CardBackgroundColour}" />
-    <SolidColorBrush x:Key="CardBackgroundHoverBrush" Color="{DynamicResource CardBackgroundHoverColour}" />
-    <SolidColorBrush x:Key="CardBackgroundPressedBrush" Color="{DynamicResource CardBackgroundPressedColour}" />
-    <SolidColorBrush x:Key="CardBackgroundSelectedBrush" Color="{DynamicResource CardBackgroundSelectedColour}" />
+    <!--  ================================================  -->
+    <!--  Information  -->
+    <!--  ================================================  -->
 
-    <SolidColorBrush x:Key="CardBorderBrush" Color="{DynamicResource CardBorderColour}" />
-    <SolidColorBrush x:Key="CardBorderHoverBrush" Color="{DynamicResource CardBorderHoverColour}" />
-    <SolidColorBrush x:Key="CardBorderSelectedBrush" Color="{DynamicResource CardBorderSelectedColour}" />
+    <!--  Background  -->
+    <SolidColorBrush x:Key="InfoCard.Information.Normal.Background" Color="{DynamicResource InfoCardBackgroundColour}" />
+    <SolidColorBrush x:Key="InfoCard.Information.Hover.Background" Color="{DynamicResource InfoCardBackgroundHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Information.Pressed.Background" Color="{DynamicResource InfoCardBackgroundPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Information.Selected.Background" Color="{DynamicResource InfoCardBackgroundSelectedColour}" />
 
-    <SolidColorBrush x:Key="InfoCardBackgroundBrush" Color="{DynamicResource InfoCardBackgroundColour}" />
-    <SolidColorBrush x:Key="RunningBackgroundBrush" Color="{DynamicResource RunningBackgroundColour}" />
-    <SolidColorBrush x:Key="RecommendedCardBackgroundBrush" Color="{DynamicResource RecommendedCardBackgroundColour}" />
-    <SolidColorBrush x:Key="SuccessCardBackgroundBrush" Color="{DynamicResource SuccessCardBackgroundColour}" />
-    <SolidColorBrush x:Key="WarningCardBackgroundBrush" Color="{DynamicResource WarningCardBackgroundColour}" />
-    <SolidColorBrush x:Key="CautionCardBackgroundBrush" Color="{DynamicResource CautionCardBackgroundColour}" />
-    <SolidColorBrush x:Key="ErrorCardBackgroundBrush" Color="{DynamicResource ErrorCardBackgroundColour}" />
-    <SolidColorBrush x:Key="NoticeCardBackgroundBrush" Color="{DynamicResource NoticeCardBackgroundColour}" />
-    <SolidColorBrush x:Key="DisabledCardBackgroundBrush" Color="{DynamicResource DisabledCardBackgroundColour}" />
+    <!--  Border  -->
+    <SolidColorBrush x:Key="InfoCard.Information.Normal.Border" Color="{DynamicResource InfoCardBorderColour}" />
+    <SolidColorBrush x:Key="InfoCard.Information.Hover.Border" Color="{DynamicResource InfoCardBorderHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Information.Pressed.Border" Color="{DynamicResource InfoCardBorderPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Information.Selected.Border" Color="{DynamicResource InfoCardBorderSelectedColour}" />
 
-    <SolidColorBrush x:Key="InfoCardBorderBrush" Color="{DynamicResource InfoCardBorderColour}" />
-    <SolidColorBrush x:Key="RunningBorderBrush" Color="{DynamicResource RunningBorderColour}" />
-    <SolidColorBrush x:Key="RecommendedCardBorderBrush" Color="{DynamicResource RecommendedCardBorderColour}" />
-    <SolidColorBrush x:Key="SuccessCardBorderBrush" Color="{DynamicResource SuccessCardBorderColour}" />
-    <SolidColorBrush x:Key="WarningCardBorderBrush" Color="{DynamicResource WarningCardBorderColour}" />
-    <SolidColorBrush x:Key="CautionCardBorderBrush" Color="{DynamicResource CautionCardBorderColour}" />
-    <SolidColorBrush x:Key="ErrorCardBorderBrush" Color="{DynamicResource ErrorCardBorderColour}" />
-    <SolidColorBrush x:Key="NoticeCardBorderBrush" Color="{DynamicResource NoticeCardBorderColour}" />
-    <SolidColorBrush x:Key="DisabledCardBorderBrush" Color="{DynamicResource DisabledCardBorderColour}" />
+    <!--  ================================================  -->
+    <!--  Running  -->
+    <!--  ================================================  -->
+
+    <!--  Background  -->
+    <SolidColorBrush x:Key="InfoCard.Running.Normal.Background" Color="{DynamicResource RunningCardBackgroundColour}" />
+    <SolidColorBrush x:Key="InfoCard.Running.Hover.Background" Color="{DynamicResource RunningCardBackgroundHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Running.Pressed.Background" Color="{DynamicResource RunningCardBackgroundPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Running.Selected.Background" Color="{DynamicResource RunningCardBackgroundSelectedColour}" />
+
+    <!--  Border  -->
+    <SolidColorBrush x:Key="InfoCard.Running.Normal.Border" Color="{DynamicResource RunningCardBorderColour}" />
+    <SolidColorBrush x:Key="InfoCard.Running.Hover.Border" Color="{DynamicResource RunningCardBorderHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Running.Pressed.Border" Color="{DynamicResource RunningCardBorderPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Running.Selected.Border" Color="{DynamicResource RunningCardBorderSelectedColour}" />
+
+    <!--  ================================================  -->
+    <!--  Recommended  -->
+    <!--  ================================================  -->
+
+    <!--  Background  -->
+    <SolidColorBrush x:Key="InfoCard.Recommended.Normal.Background" Color="{DynamicResource RecommendedCardBackgroundColour}" />
+    <SolidColorBrush x:Key="InfoCard.Recommended.Hover.Background" Color="{DynamicResource RecommendedCardBackgroundHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Recommended.Pressed.Background" Color="{DynamicResource RecommendedCardBackgroundPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Recommended.Selected.Background" Color="{DynamicResource RecommendedCardBackgroundSelectedColour}" />
+
+    <!--  Border  -->
+    <SolidColorBrush x:Key="InfoCard.Recommended.Normal.Border" Color="{DynamicResource RecommendedCardBorderColour}" />
+    <SolidColorBrush x:Key="InfoCard.Recommended.Hover.Border" Color="{DynamicResource RecommendedCardBorderHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Recommended.Pressed.Border" Color="{DynamicResource RecommendedCardBorderPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Recommended.Selected.Border" Color="{DynamicResource RecommendedCardBorderSelectedColour}" />
+
+    <!--  ================================================  -->
+    <!--  Success  -->
+    <!--  ================================================  -->
+
+    <!--  Background  -->
+    <SolidColorBrush x:Key="InfoCard.Successful.Normal.Background" Color="{DynamicResource SuccessCardBackgroundColour}" />
+    <SolidColorBrush x:Key="InfoCard.Successful.Hover.Background" Color="{DynamicResource SuccessCardBackgroundHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Successful.Pressed.Background" Color="{DynamicResource SuccessCardBackgroundPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Successful.Selected.Background" Color="{DynamicResource SuccessCardBackgroundSelectedColour}" />
+
+    <!--  Border  -->
+    <SolidColorBrush x:Key="InfoCard.Successful.Normal.Border" Color="{DynamicResource SuccessCardBorderColour}" />
+    <SolidColorBrush x:Key="InfoCard.Successful.Hover.Border" Color="{DynamicResource SuccessCardBorderHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Successful.Pressed.Border" Color="{DynamicResource SuccessCardBorderPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Successful.Selected.Border" Color="{DynamicResource SuccessCardBorderSelectedColour}" />
+
+    <!--  ================================================  -->
+    <!--  Warning  -->
+    <!--  ================================================  -->
+
+    <!--  Background  -->
+    <SolidColorBrush x:Key="InfoCard.Warning.Normal.Background" Color="{DynamicResource WarningCardBackgroundColour}" />
+    <SolidColorBrush x:Key="InfoCard.Warning.Hover.Background" Color="{DynamicResource WarningCardBackgroundHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Warning.Pressed.Background" Color="{DynamicResource WarningCardBackgroundPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Warning.Selected.Background" Color="{DynamicResource WarningCardBackgroundSelectedColour}" />
+
+    <!--  Border  -->
+    <SolidColorBrush x:Key="InfoCard.Warning.Normal.Border" Color="{DynamicResource WarningCardBorderColour}" />
+    <SolidColorBrush x:Key="InfoCard.Warning.Hover.Border" Color="{DynamicResource WarningCardBorderHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Warning.Pressed.Border" Color="{DynamicResource WarningCardBorderPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Warning.Selected.Border" Color="{DynamicResource WarningCardBorderSelectedColour}" />
+
+    <!--  ================================================  -->
+    <!--  Caution  -->
+    <!--  ================================================  -->
+
+    <!--  Background  -->
+    <SolidColorBrush x:Key="InfoCard.Caution.Normal.Background" Color="{DynamicResource CautionCardBackgroundColour}" />
+    <SolidColorBrush x:Key="InfoCard.Caution.Hover.Background" Color="{DynamicResource CautionCardBackgroundHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Caution.Pressed.Background" Color="{DynamicResource CautionCardBackgroundPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Caution.Selected.Background" Color="{DynamicResource CautionCardBackgroundSelectedColour}" />
+
+    <!--  Border  -->
+    <SolidColorBrush x:Key="InfoCard.Caution.Normal.Border" Color="{DynamicResource CautionCardBorderColour}" />
+    <SolidColorBrush x:Key="InfoCard.Caution.Hover.Border" Color="{DynamicResource CautionCardBorderHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Caution.Pressed.Border" Color="{DynamicResource CautionCardBorderPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Caution.Selected.Border" Color="{DynamicResource CautionCardBorderSelectedColour}" />
+
+    <!--  ================================================  -->
+    <!--  Error  -->
+    <!--  ================================================  -->
+
+    <!--  Background  -->
+    <SolidColorBrush x:Key="InfoCard.Error.Normal.Background" Color="{DynamicResource ErrorCardBackgroundColour}" />
+    <SolidColorBrush x:Key="InfoCard.Error.Hover.Background" Color="{DynamicResource ErrorCardBackgroundHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Error.Pressed.Background" Color="{DynamicResource ErrorCardBackgroundPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Error.Selected.Background" Color="{DynamicResource ErrorCardBackgroundSelectedColour}" />
+
+    <!--  Border  -->
+    <SolidColorBrush x:Key="InfoCard.Error.Normal.Border" Color="{DynamicResource ErrorCardBorderColour}" />
+    <SolidColorBrush x:Key="InfoCard.Error.Hover.Border" Color="{DynamicResource ErrorCardBorderHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Error.Pressed.Border" Color="{DynamicResource ErrorCardBorderPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Error.Selected.Border" Color="{DynamicResource ErrorCardBorderSelectedColour}" />
+
+    <!--  ================================================  -->
+    <!--  Notice  -->
+    <!--  ================================================  -->
+
+    <!--  Background  -->
+    <SolidColorBrush x:Key="InfoCard.Notice.Normal.Background" Color="{DynamicResource NoticeCardBackgroundColour}" />
+    <SolidColorBrush x:Key="InfoCard.Notice.Hover.Background" Color="{DynamicResource NoticeCardBackgroundHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Notice.Pressed.Background" Color="{DynamicResource NoticeCardBackgroundPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Notice.Selected.Background" Color="{DynamicResource NoticeCardBackgroundSelectedColour}" />
+
+    <!--  Border  -->
+    <SolidColorBrush x:Key="InfoCard.Notice.Normal.Border" Color="{DynamicResource NoticeCardBorderColour}" />
+    <SolidColorBrush x:Key="InfoCard.Notice.Hover.Border" Color="{DynamicResource NoticeCardBorderHoverColour}" />
+    <SolidColorBrush x:Key="InfoCard.Notice.Pressed.Border" Color="{DynamicResource NoticeCardBorderPressedColour}" />
+    <SolidColorBrush x:Key="InfoCard.Notice.Selected.Border" Color="{DynamicResource NoticeCardBorderSelectedColour}" />
+
     <!--#endregion-->
 
     <!--#region Button Colours-->
@@ -97,34 +197,41 @@
     <!--  Default transparent glass button  -->
     <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{DynamicResource ButtonBackgroundColour}" />
     <SolidColorBrush x:Key="ButtonBorderBrush" Color="{DynamicResource ButtonBorderColour}" />
-    <SolidColorBrush x:Key="ButtonMouseOverBrush" Color="{DynamicResource ButtonMouseOverColour}" />
+    <SolidColorBrush x:Key="ButtonHoverBrush" Color="{DynamicResource ButtonHoverColour}" />
     <SolidColorBrush x:Key="ButtonPressedBrush" Color="{DynamicResource ButtonPressedColour}" />
     <SolidColorBrush x:Key="ButtonIsCheckedBrush" Color="{DynamicResource ButtonIsCheckedColour}" />
 
     <!--  Primary button  -->
+    <!--  Background  -->
     <SolidColorBrush x:Key="PrimaryButtonBackgroundBrush" Color="{DynamicResource PrimaryButtonBackgroundColour}" />
-    <SolidColorBrush x:Key="PrimaryButtonMouseOverBrush" Color="{DynamicResource PrimaryButtonMouseOverColour}" />
-    <SolidColorBrush x:Key="PrimaryButtonPressedBrush" Color="{DynamicResource PrimaryButtonPressedColour}" />
-    <SolidColorBrush x:Key="PrimaryButtonBorderBrush" Color="{DynamicResource PrimaryButtonBorderColour}" />
+    <SolidColorBrush x:Key="PrimaryButtonBackgroundHoverBrush" Color="{DynamicResource PrimaryButtonBackgroundHoverColour}" />
+    <SolidColorBrush x:Key="PrimaryButtonBackgroundPressedBrush" Color="{DynamicResource PrimaryButtonBackgroundPressedColour}" />
+    <SolidColorBrush x:Key="PrimaryButtonBackgroundSelectedBrush" Color="{DynamicResource PrimaryButtonBackgroundSelectedColour}" />
     <SolidColorBrush x:Key="PrimaryButtonForegroundBrush" Color="{DynamicResource PrimaryButtonForegroundColour}" />
+
+    <!--  Background  -->
+    <SolidColorBrush x:Key="PrimaryButtonBorderBrush" Color="{DynamicResource PrimaryButtonBorderColour}" />
+    <SolidColorBrush x:Key="PrimaryButtonBorderHoverBrush" Color="{DynamicResource PrimaryButtonBorderHoverColour}" />
+    <SolidColorBrush x:Key="PrimaryButtonBorderPressedBrush" Color="{DynamicResource PrimaryButtonBorderPressedColour}" />
+    <SolidColorBrush x:Key="PrimaryButtonBorderSelectedBrush" Color="{DynamicResource PrimaryButtonBorderSelectedColour}" />
 
     <!--  Secondary button  -->
     <SolidColorBrush x:Key="SecondaryButtonBackgroundBrush" Color="{DynamicResource SecondaryButtonBackgroundColour}" />
-    <SolidColorBrush x:Key="SecondaryButtonMouseOverBrush" Color="{DynamicResource SecondaryButtonMouseOverColour}" />
+    <SolidColorBrush x:Key="SecondaryButtonHoverBrush" Color="{DynamicResource SecondaryButtonHoverColour}" />
     <SolidColorBrush x:Key="SecondaryButtonPressedBrush" Color="{DynamicResource SecondaryButtonPressedColour}" />
     <SolidColorBrush x:Key="SecondaryButtonBorderBrush" Color="{DynamicResource SecondaryButtonBorderColour}" />
     <SolidColorBrush x:Key="SecondaryButtonForegroundBrush" Color="{DynamicResource SecondaryButtonForegroundColour}" />
 
     <!--  Error button  -->
     <SolidColorBrush x:Key="ErrorButtonBackgroundBrush" Color="{DynamicResource ErrorButtonBackgroundColour}" />
-    <SolidColorBrush x:Key="ErrorButtonMouseOverBrush" Color="{DynamicResource ErrorButtonMouseOverColour}" />
+    <SolidColorBrush x:Key="ErrorButtonHoverBrush" Color="{DynamicResource ErrorButtonHoverColour}" />
     <SolidColorBrush x:Key="ErrorButtonPressedBrush" Color="{DynamicResource ErrorButtonPressedColour}" />
     <SolidColorBrush x:Key="ErrorButtonBorderBrush" Color="{DynamicResource ErrorButtonBorderColour}" />
     <SolidColorBrush x:Key="ErrorButtonForegroundBrush" Color="{DynamicResource ErrorButtonForegroundColour}" />
 
     <!--  Success button  -->
     <SolidColorBrush x:Key="SuccessButtonBackgroundBrush" Color="{DynamicResource SuccessButtonBackgroundColour}" />
-    <SolidColorBrush x:Key="SuccessButtonMouseOverBrush" Color="{DynamicResource SuccessButtonMouseOverColour}" />
+    <SolidColorBrush x:Key="SuccessButtonHoverBrush" Color="{DynamicResource SuccessButtonHoverColour}" />
     <SolidColorBrush x:Key="SuccessButtonPressedBrush" Color="{DynamicResource SuccessButtonPressedColour}" />
     <SolidColorBrush x:Key="SuccessButtonBorderBrush" Color="{DynamicResource SuccessButtonBorderColour}" />
     <SolidColorBrush x:Key="SuccessButtonForegroundBrush" Color="{DynamicResource SuccessButtonForegroundColour}" />

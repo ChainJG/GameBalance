@@ -6,6 +6,7 @@
 
     <Style BasedOn="{StaticResource {x:Type controls:InteractiveCard}}" TargetType="{x:Type controls:DockItemControl}">
         <Setter Property="NormalBackground" Value="Transparent" />
+        <Setter Property="NormalBorder" Value="Transparent" />
         <Setter Property="IsSelected" Value="{Binding IsSelected}" />
 
         <Setter Property="Template">

@@ -7,16 +7,21 @@ namespace GameBalance.Framework.Navigation.Core
     {
         public event Action<object>? ViewChanged;
 
+        private readonly HomeViewModel _homeViewModel = new();
+        private readonly WindowsViewModel _windowsViewModel = new();
+        private readonly SystemViewModel _systemViewModel = new();
+        private readonly StorageViewModel _storageViewModel = new();
+        private readonly InstallerViewModel _installerViewModel = new();
+
         public void Navigate(PageId page)
         {
             object viewModel = page switch
             {
-                PageId.Home => new HomeViewModel(),
-                PageId.Windows => new WindowsViewModel(),
-                PageId.System => new SystemViewModel(),
-                PageId.Storage => new StorageViewModel(),
-                PageId.Installer => new InstallerViewModel(),
-
+                PageId.Home => _homeViewModel,
+                PageId.Windows => _windowsViewModel,
+                PageId.System => _systemViewModel,
+                PageId.Storage => _storageViewModel,
+                PageId.Installer => _installerViewModel,
                 _ => throw new ArgumentOutOfRangeException(nameof(page))
             };
 

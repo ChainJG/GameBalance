@@ -28,7 +28,6 @@ namespace GameBalance.Framework.Controls
 
         #endregion
 
-
         #region Padding
 
         public Thickness CardPadding

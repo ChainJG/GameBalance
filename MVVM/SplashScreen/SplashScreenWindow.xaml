@@ -25,7 +25,7 @@
     <Border Style="{StaticResource ApplicationBorderStyle}">
         <Grid>
 
-            <controls:WindowCaptionButton
+            <controls:WindowCaptionControl
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Command="Close"
